@@ -36,6 +36,7 @@ gem 'thin'
 gem 'starter_generators'
 gem 'awesome_print'
 gem 'stamp'
+gem "paperclip", "~> 4.2"
 
 # Quiet assets only in development
 gem 'quiet_assets', group: :development
@@ -50,4 +51,5 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
 
