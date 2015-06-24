@@ -4,8 +4,16 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
+    if params[:search]
+    @dogs = Dog.where("name LIKE '%#{params[:search]}%'")
+  if @dogs.size.zero?
+        flash[:notice] = "No result found for \"#{params[:search]}\""
+        @dogs = Dog.all
+      end
+  else
     @dogs = Dog.all
   end
+end
 
   # GET /dogs/1
   # GET /dogs/1.json
